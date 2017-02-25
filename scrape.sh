@@ -1,6 +1,15 @@
 #!/bin/bash
 
-TO=denis.pitul@gmail.com
+die() {
+	echo $@
+	exit 1
+}
+
+if [ "a$1" == "a" ]; then
+	die "Email needs to be supplied!"
+fi
+
+TO=$1
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
