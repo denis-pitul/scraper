@@ -1,5 +1,6 @@
 #personal
 .ropeproject
+*.swp
 
 # GIT generated
 # Byte-compiled / optimized / DLL files
