@@ -10,6 +10,7 @@ email_file = script_path + '/emails/selenium.mail'
 ################################################################################
 ##########################   GET SELENIUM SERVER VER   #########################
 ################################################################################
+start = time.clock()
 driver = webdriver.PhantomJS()
 driver.get('http://docs.seleniumhq.org/download')
 downloadLnk = \
@@ -38,7 +39,9 @@ email_file.write('\n')
 email_file.write('Maven selenium-java:\n')
 email_file.write('\tver: %s\n' % (mvnVersion,))
 email_file.write('\n')
-email_file.write('\nGenerated on: ' + time.strftime("%c %Z"))
+end = time.clock()
+email_file.write('\nGenerated on: ' + time.strftime("%c %Z") + \
+                 ' in %.09f' % (end - start))
 email_file.close()
 ################################################################################
 ##########################          CLEANUP          ###########################
